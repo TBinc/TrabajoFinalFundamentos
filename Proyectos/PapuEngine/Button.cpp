@@ -5,7 +5,7 @@
 Button::Button(std::string _texture)
 	:texture(_texture), clicked(false)
 {
-	position = glm::vec2(200, 100);
+	position = glm::vec2(200, 150);
 	textureID
 		= ResourceManager::getTexture(texture).id;
 	color.set(255, 255, 255, 255);

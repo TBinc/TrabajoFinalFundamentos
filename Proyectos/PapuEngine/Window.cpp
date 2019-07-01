@@ -32,7 +32,7 @@ int Window::create(string windowName, int screenWidth, int screenHeight, unsigne
 	if (_window == nullptr) {
 	}
 	
-	Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096);
+	//Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096);
 	SDL_GLContext glContext = SDL_GL_CreateContext(_window);
 
 	GLenum error = glewInit();

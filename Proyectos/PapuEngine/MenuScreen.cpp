@@ -45,22 +45,18 @@ void MenuScreen::onEntry() {
 
 void MenuScreen::update() {
 	_camera2D.update();
-	if (_game->_inputManager.isKeyDown(SDL_BUTTON_LEFT)) {
-		if (
-			!button->getClicked() &&
-				button->click(_game->_inputManager.getMouseCoords())
-			) {
-			button->setClicked(true);
-			std::cout << "clik" << std::endl;
-			_currentState = ScreenState::CHANGE_NEXT;
-		}
-	}
 	checkInput();
 }
 
 void MenuScreen::checkInput() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
+		switch (event.type) {
+		case SDL_MOUSEBUTTONDOWN:
+			button->setClicked(true);
+			std::cout << "clik" << std::endl;
+			_currentState = ScreenState::CHANGE_NEXT;
+		}
 		_game->onSDLEvent(event);
 	}
 }
@@ -80,10 +76,22 @@ void MenuScreen::draw() {
 	_spriteBatch.begin();
 	background->draw(_spriteBatch);
 	button->draw(_spriteBatch);
-	sprintf(buffer, " ARREGLANDO EL BUG");
+	sprintf(buffer, "DRAG AND DROP");
 	_spriteFont->draw(_spriteBatch, buffer,
-		glm::vec2(250, 100), glm::vec2(0.5), 0.0f,
+		glm::vec2(250, 300), glm::vec2(0.5), 0.0f,
 		ColorRGBA(255, 255, 255, 255));
+	sprintf(buffer, "INICIE EL JUEGO");
+	_spriteFont->draw(_spriteBatch, buffer,
+		glm::vec2(50, 150), glm::vec2(0.5), 0.0f,
+		ColorRGBA(0, 0, 0, 255));
+	sprintf(buffer, "CLICK PARA SELECCIONAR");
+	_spriteFont->draw(_spriteBatch, buffer,
+		glm::vec2(50, 100), glm::vec2(0.5), 0.0f,
+		ColorRGBA(0, 0, 0, 255));
+	sprintf(buffer, "Y CLICK PARA SOLTAR");
+	_spriteFont->draw(_spriteBatch, buffer,
+		glm::vec2(50, 50), glm::vec2(0.5), 0.0f,
+		ColorRGBA(0, 0, 0, 255));
 	_spriteBatch.end();
 	_spriteBatch.renderBatch();
 

@@ -29,10 +29,14 @@ protected:
 public:
 	Agent(float agent_width,float agent_height,glm::vec2 position, std::string texturePath);
 	glm::vec2 getPosition()const { return _position; };
-
+	virtual void setPosition(glm::vec2 position) {
+		_position = position;
+	}
 	virtual void update() = 0;
 	virtual void changeTexture(std::string texturePath) = 0;
 	virtual std::string getTexture() = 0;
+	float getWidth() { return _agent_width; };
+	float getHeight() { return _agent_height; };
 	void draw(SpriteBatch& spritebatch);
 	bool collideWithLevel(const std::vector<std::string>& levelData);
 	virtual ~Agent();

@@ -124,6 +124,7 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera2D.cpp" />
+    <ClCompile Include="DragAndDrop.cpp" />
     <ClCompile Include="EndScreen.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Error.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Background.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Camera2D.h" />
+    <ClInclude Include="DragAndDrop.h" />
     <ClInclude Include="EndScreen.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Error.h" />

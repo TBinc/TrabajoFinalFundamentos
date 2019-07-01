@@ -53,20 +53,29 @@ void PlayScreen::onEntry() {
 	player = new Gamer(106, 79,
 		glm::vec2(200, 200), "Textures/Player.png", 
 		&_game->_inputManager);
-	initGUI();
+
+	playerMario = new Enemy(75, 100,
+		glm::vec2(400, 150), "Textures/Paper_Mario_.png");
 
 	sounds.push_back(_soundCache.getSound("Sounds/scratch.wav"));
 	sounds.push_back(_soundCache.getSound("Sounds/high.wav"));
-	sounds.push_back(_soundCache.getSound("Sounds/low.wav"));	
+	sounds.push_back(_soundCache.getSound("Sounds/low.wav"));
+
+	dragAndDrop = new DragAndDrop(&_game->_inputManager);
+	dragAndDrop->addAgent(player);
+	dragAndDrop->addAgent(playerMario);
+	initGUI();
 }
 
 void PlayScreen::update() {
 	_camera2D.update();
+	dragAndDrop->update();
 	player->update();
+	//playerMario->update();
 	if (random100(randomEngine) < 8)
 	{
 		enemies.push_back(new Enemy(100, 66,
-			glm::vec2(randomX(randomEngine),randomY(randomEngine)), "Textures/Piedra.png"));
+			glm::vec2(randomX(randomEngine),randomY(randomEngine)*1.75), "Textures/Piedra.png"));
 	}
 	for (size_t i = 0; i < enemies.size(); i++)
 	{
@@ -79,6 +88,12 @@ void PlayScreen::update() {
 void PlayScreen::checkInput() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
+		switch (event.type) {
+		case SDL_MOUSEBUTTONDOWN:
+			dragAndDrop->verify();
+			break;
+		
+		}
 		_game->onSDLEvent(event);
 	}
 }
@@ -91,23 +106,23 @@ void PlayScreen::checkBoundaries()
 	if (pPos.x > _window->getScreenWidth())
 	{
 		player->setPosition(glm::vec2(-104, pPos.y));
-		sounds[2]->playSound();
+		//sounds[2]->playSound();
 	}
 	else if (pPos.x < -105)
 	{
 		player->setPosition(glm::vec2(_window->getScreenWidth(), pPos.y));
-		sounds[2]->playSound();
+		//sounds[2]->playSound();
 	}
 
 	if (pPos.y > _window->getScreenHeight())
 	{
 		player->setPosition(glm::vec2(pPos.x,-59));
-		sounds[1]->playSound();
+		//sounds[1]->playSound();
 	}
 	else if (pPos.y < -60)
 	{
 		player->setPosition(glm::vec2(pPos.x,_window->getScreenHeight()));
-		sounds[1]->playSound();
+		//sounds[1]->playSound();
 	}
 
 	for (size_t i = 0; i < enemies.size(); i++)
@@ -117,7 +132,7 @@ void PlayScreen::checkBoundaries()
 			eAux = enemies[i];
 			enemies[i] = enemies.back();
 			enemies.pop_back();
-			sounds[0]->playSound();
+			//sounds[0]->playSound();
 			delete eAux;
 			break;
 		}
@@ -137,7 +152,7 @@ void PlayScreen::draw() {
 	glUniform1i(imageLocation, 0);
 	_spriteBatch.begin();;
 	player->draw(_spriteBatch);
-
+	playerMario->draw(_spriteBatch);
 	for (size_t i = 0; i < enemies.size(); i++)
 	{
 		enemies[i]->draw(_spriteBatch);

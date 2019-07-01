@@ -8,6 +8,7 @@
 #include "GLTexture.h"
 #include "Gamer.h"
 #include "Enemy.h"
+#include "DragAndDrop.h"
 #include <random>
 #include <ctime>
 
@@ -16,6 +17,8 @@ class PlayScreen: public IGameScreen
 private:
 	GLS_Program _program;
 	Gamer* player;
+	Enemy* playerMario;
+
 	Camera2D _camera2D;
 	Window* _window = nullptr;
 	SpriteBatch _spriteBatch;
@@ -23,6 +26,9 @@ private:
 	Camera2D _hudCamera;
 	void drawHUD();
 	SoundCache _soundCache;
+	
+	DragAndDrop* dragAndDrop;
+
 	vector<Enemy*> enemies;
 	vector<Sound*> sounds;
 
