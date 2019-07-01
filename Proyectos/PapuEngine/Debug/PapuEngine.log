@@ -1,15 +1,50 @@
-﻿  App.cpp
-d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+﻿  Agent.cpp
+  App.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Background.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\background.cpp(2): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Button.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\button.cpp(2): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Camera2D.cpp
+  EndScreen.cpp
+  Enemy.cpp
+  Error.cpp
+  Game.cpp
+  Gamer.cpp
+  GLS_Program.cpp
+  ImageLoader.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\imageloader.cpp(36): warning C4244: '=': conversión de 'unsigned long' a 'float'; posible pérdida de datos
+d:\fundamentos\trabajofinal\proyectos\papuengine\imageloader.cpp(37): warning C4244: '=': conversión de 'unsigned long' a 'float'; posible pérdida de datos
+  InputManager.cpp
+  IOManager.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\iomanager.cpp(15): warning C4244: 'inicializando': conversión de 'std::streamoff' a 'int'; posible pérdida de datos
+d:\fundamentos\trabajofinal\proyectos\papuengine\iomanager.cpp(18): warning C4244: '-=': conversión de 'std::streamoff' a 'int'; posible pérdida de datos
+  main.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  MenuScreen.cpp
+  PapuEngine.cpp
+  picoPNG.cpp
   PlayScreen.cpp
-d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.cpp(157): warning C4101: 'buffer': variable local sin referencia
+d:\fundamentos\trabajofinal\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+d:\fundamentos\trabajofinal\proyectos\papuengine\playscreen.cpp(157): warning C4101: 'buffer': variable local sin referencia
+  ResourceManager.cpp
+  Generando código...
+d:\fundamentos\trabajofinal\proyectos\papuengine\camera2d.cpp(38): warning C4715: 'Camera2D::isBoxInView': no todas las rutas de acceso de control devuelven un valor
+  Compilando...
+  ScreenList.cpp
   Sound.cpp
   SoundCache.cpp
+  Sprite.cpp
+  SpriteBatch.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\spritebatch.cpp(45): warning C4018: '<': no coinciden signed/unsigned
+d:\fundamentos\trabajofinal\proyectos\papuengine\spritebatch.cpp(73): warning C4018: '<': no coinciden signed/unsigned
+  SpriteFont.cpp
+  TextureCache.cpp
+  Timing.cpp
+d:\fundamentos\trabajofinal\proyectos\papuengine\timing.cpp(22): warning C4244: 'argumento': conversión de 'float' a 'Uint32'; posible pérdida de datos
   Window.cpp
-  main.cpp
-d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   Generando código...
 Sound.obj : error LNK2019: símbolo externo _Mix_LoadWAV_RW sin resolver al que se hace referencia en la función "public: __thiscall Sound::Sound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Sound@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 Sound.obj : error LNK2019: símbolo externo _Mix_PlayChannelTimed sin resolver al que se hace referencia en la función "public: void __thiscall Sound::playSound(void)" (?playSound@Sound@@QAEXXZ)
 Window.obj : error LNK2019: símbolo externo _Mix_OpenAudio sin resolver al que se hace referencia en la función "public: int __thiscall Window::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,unsigned int)" (?create@Window@@QAEHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHI@Z)
-D:\Fundamentos\LVALDIVIA\Tarea3\Proyectos\Debug\PapuEngine.exe : fatal error LNK1120: 3 externos sin resolver
+D:\Fundamentos\TrabajoFinal\Proyectos\Debug\PapuEngine.exe : fatal error LNK1120: 3 externos sin resolver
