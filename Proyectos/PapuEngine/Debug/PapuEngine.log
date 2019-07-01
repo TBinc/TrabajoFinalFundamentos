@@ -1,0 +1,15 @@
+﻿  App.cpp
+d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  PlayScreen.cpp
+d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.cpp(157): warning C4101: 'buffer': variable local sin referencia
+  Sound.cpp
+  SoundCache.cpp
+  Window.cpp
+  main.cpp
+d:\fundamentos\lvaldivia\tarea3\proyectos\papuengine\playscreen.h(29): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
+Sound.obj : error LNK2019: símbolo externo _Mix_LoadWAV_RW sin resolver al que se hace referencia en la función "public: __thiscall Sound::Sound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Sound@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Sound.obj : error LNK2019: símbolo externo _Mix_PlayChannelTimed sin resolver al que se hace referencia en la función "public: void __thiscall Sound::playSound(void)" (?playSound@Sound@@QAEXXZ)
+Window.obj : error LNK2019: símbolo externo _Mix_OpenAudio sin resolver al que se hace referencia en la función "public: int __thiscall Window::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,unsigned int)" (?create@Window@@QAEHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHI@Z)
+D:\Fundamentos\LVALDIVIA\Tarea3\Proyectos\Debug\PapuEngine.exe : fatal error LNK1120: 3 externos sin resolver
